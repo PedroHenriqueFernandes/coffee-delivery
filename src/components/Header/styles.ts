@@ -12,5 +12,7 @@ export const Cart = styled.div`
     width: 2rem;
     display: flex;
     align-items: center;
-    justify-content: center
+    justify-content: center;
+    background-color: ${props => props.theme["yellow-100"]};
+    border-radius: 6px;
 `

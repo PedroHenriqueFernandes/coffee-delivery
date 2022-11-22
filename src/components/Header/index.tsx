@@ -7,7 +7,7 @@ export function Header(){
         <HeaderContainer>
             <img src={logoCoffeDelivery} alt="" />
             <Cart>
-                <ShoppingCartSimple color="red" height={16} width={16}/>
+                <ShoppingCartSimple color={"#C47F17"} weight="fill" size={16}/>
             </Cart>
         </HeaderContainer>
     )
