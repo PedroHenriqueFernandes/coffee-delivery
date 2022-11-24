@@ -8,11 +8,35 @@ export const HeaderContainer = styled.header`
 `
 
 export const Cart = styled.div`
-    height: 2rem;
-    width: 2rem;
+    height: 2.375rem;
+    width: 2.375rem;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: ${props => props.theme["yellow-100"]};
     border-radius: 6px;
+`
+
+export const Location = styled.div`
+    height: 2.375rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: ${props => props.theme["purple-100"]};
+    border-radius: 6px;
+    padding: 8px;
+`
+
+export const CartAndLocationContainer = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+
+    span{
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+        font-size: 0.875rem;
+        line-height: 1.1375rem;
+    }
 `
