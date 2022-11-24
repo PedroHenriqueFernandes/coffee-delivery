@@ -18,9 +18,10 @@ export const IntroContainer = styled.div`
 export const IntroTextContainer = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     height: 100%;
-    width: 42rem;
+    width: 37rem;
+    gap: 1rem;
 `;
 
 export const IntroTitle = styled.h1`
@@ -31,16 +32,44 @@ export const IntroTitle = styled.h1`
     color: ${props => props.theme['title']};
 `;
 
+export const IntroText = styled.p`
+    font-size: 1.25rem;
+    font-weight: regular;
+    line-height: 1.625rem;
+`;
+
 
 export const CoffeeArt = styled.div`
     height: 100%;
-    width: 24rem;
+    width: 30rem;
     display: flex;
     align-items: center;
     justify-content: center;
 
     img{
         /* height: 22.5rem; */
-        width: 28rem;
+        width: 30rem;
     }
+`;
+
+export const IntroItems = styled.div`
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 37rem;
+`;
+
+export const IntroItem = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`;
+
+export const IconItemsIntro = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 8px;
+    border-radius: 50%;
 `;
