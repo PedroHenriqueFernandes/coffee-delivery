@@ -9,9 +9,9 @@ export const IntroContainer = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: calc(100vh - 6.5rem);
+    height: calc(80vh - 6.5rem);
     width: 100%;
-    padding: 5rem 10rem;
+    padding: 5.875rem 10rem;
     gap: 3.5rem;
 `;
 
@@ -55,9 +55,26 @@ export const CoffeeArt = styled.div`
 export const IntroItems = styled.div`
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    gap: 1.25rem;
     height: 100%;
     width: 37rem;
+    padding-top: 2.0625rem;
+`;
+
+export const IntroItemLeft = styled(IntroItems)`
+    width: 16rem;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 0rem;
+`;
+
+export const IntroItemRight = styled(IntroItems)`
+    width: 21rem;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 0rem;
 `;
 
 export const IntroItem = styled.div`
@@ -75,9 +92,24 @@ export const IconItemsIntro = styled.div`
     justify-content: center;
     padding: 8px 8px;
     border-radius: 50%;
-    background-color: ${props => props.theme['yellow-700']};
 
     svg{
         color: ${props => props.theme['white']};
     }
+`;
+
+export const IconItemsIntroYellow = styled(IconItemsIntro)`
+    background-color: ${props => props.theme['yellow-700']};
+`;
+
+export const IconItemsIntroGray = styled(IconItemsIntro)`
+    background-color: ${props => props.theme['text']};
+`;
+
+export const IconItemsIntroYellowLight = styled(IconItemsIntro)`
+    background-color: ${props => props.theme['yellow-500']};
+`;
+
+export const IconItemsIntroPurple = styled(IconItemsIntro)`
+    background-color: ${props => props.theme['purple-700']};
 `;
