@@ -15,6 +15,10 @@ export const Cart = styled.div`
     justify-content: center;
     background-color: ${props => props.theme["yellow-100"]};
     border-radius: 6px;
+
+    svg{
+        fill: ${props => props.theme["yellow-700"]};
+    }
 `
 
 export const Location = styled.div`
@@ -25,6 +29,10 @@ export const Location = styled.div`
     background-color: ${props => props.theme["purple-100"]};
     border-radius: 6px;
     padding: 8px;
+
+    svg{
+        fill: ${props => props.theme["purple-500"]};
+    }
 `
 
 export const CartAndLocationContainer = styled.div`

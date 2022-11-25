@@ -64,6 +64,9 @@ export const IntroItem = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 0.75rem;
+    font-size: 1rem;
+    line-height: 1.3rem;
 `;
 
 export const IconItemsIntro = styled.div`
@@ -72,4 +75,9 @@ export const IconItemsIntro = styled.div`
     justify-content: center;
     padding: 8px 8px;
     border-radius: 50%;
+    background-color: ${props => props.theme['yellow-700']};
+
+    svg{
+        color: ${props => props.theme['white']};
+    }
 `;

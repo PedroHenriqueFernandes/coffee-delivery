@@ -8,11 +8,11 @@ export function Header() {
             <img src={logoCoffeDelivery} alt="" />
             <CartAndLocationContainer>
                 <Location >
-                    <MapPin width={16} weight="fill" color={"#8047F8"} />
+                    <MapPin width={16} weight="fill" />
                     <span>Franca, SP</span>
                 </Location>
                 <Cart>
-                    <ShoppingCartSimple color={"#C47F17"} weight="fill" size={16} />
+                    <ShoppingCartSimple weight="fill" size={16} />
                 </Cart>
             </CartAndLocationContainer>
         </HeaderContainer>
