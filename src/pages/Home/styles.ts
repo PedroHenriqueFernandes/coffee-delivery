@@ -9,7 +9,7 @@ export const IntroContainer = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: calc(80vh - 6.5rem);
+    height: calc(100vh - 6.5rem);
     width: 100%;
     padding: 5.875rem 10rem;
     gap: 3.5rem;

@@ -7,7 +7,7 @@ export const defaultTheme = {
     hover: "#D7D5D5,",
     label: "#8D8686",
     text: "#574F4D",
-    subscribe: "#403937",
+    subtitle: "#403937",
     title: "#272221",
 
     "purple-100": "#EBE5F9",
