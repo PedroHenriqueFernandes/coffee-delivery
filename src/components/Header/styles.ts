@@ -48,3 +48,23 @@ export const CartAndLocationContainer = styled.div`
         line-height: 1.1375rem;
     }
 `
+
+export const BackgroundItemsInCart = styled.div`
+    margin-top: -2rem;
+    margin-right: -1.25rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    background-color: ${props => props.theme["yellow-700"]};
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`
+
+export const AmountItemsInCart = styled.span`
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 0.75rem;
+    line-height: 0.975rem;
+    color: ${props => props.theme["white"]};
+`

@@ -1,4 +1,11 @@
-import { Cart, HeaderContainer, Location, CartAndLocationContainer } from "./styles";
+import { 
+    Cart, 
+    HeaderContainer, 
+    Location, 
+    CartAndLocationContainer, 
+    BackgroundItemsInCart, 
+    AmountItemsInCart 
+} from "./styles";
 import logoCoffeDelivery from "../../assets/logo-coffe-delivery.svg"
 import { MapPin, ShoppingCartSimple } from "phosphor-react";
 
@@ -13,6 +20,11 @@ export function Header() {
                 </Location>
                 <Cart>
                     <ShoppingCartSimple weight="fill" size={16} />
+                    <BackgroundItemsInCart>
+                        <AmountItemsInCart>
+                            2
+                        </AmountItemsInCart>
+                    </BackgroundItemsInCart>
                 </Cart>
             </CartAndLocationContainer>
         </HeaderContainer>

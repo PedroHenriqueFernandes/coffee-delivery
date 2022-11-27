@@ -11,8 +11,10 @@ export function Products() {
                     coffees.map((coffee) => {
                         return(
                             <ItemsCard
+                                key={coffee.title}
                                 type={coffee.type.toUpperCase()}
                                 type2={coffee.type2?.toUpperCase()}
+                                type3={coffee.type3?.toUpperCase()}
                                 img={coffee.img}
                                 title={coffee.title}
                                 subtitle={coffee.subtitle}
