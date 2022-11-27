@@ -11,8 +11,7 @@ export const IntroContainer = styled.div`
     background-position: center;
     height: calc(100vh - 6.5rem);
     width: 100%;
-    padding: 5.875rem 10rem;
-    gap: 3.5rem;
+    padding: 5.875rem 5.7rem;
 `;
 
 export const IntroTextContainer = styled.div`
@@ -20,7 +19,7 @@ export const IntroTextContainer = styled.div`
     flex-direction: column;
     justify-content: flex-start;
     height: 100%;
-    width: 37rem;
+    width: 57%;
     gap: 1rem;
 `;
 
@@ -41,14 +40,14 @@ export const IntroText = styled.p`
 
 export const CoffeeArt = styled.div`
     height: 100%;
-    width: 30rem;
+    width: 43%;
     display: flex;
     align-items: center;
     justify-content: center;
 
     img{
         /* height: 22.5rem; */
-        width: 30rem;
+        width: 100%;
     }
 `;
 

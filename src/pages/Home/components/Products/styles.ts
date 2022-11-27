@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const TitleProductsSection = styled.h2`
     font-family: 'Baloo 2', cursive;
-    padding: 0 10rem;
+    padding: 0 5.7rem;
     font-size: 2rem;
     font-weight: 900;
     line-height: 2.6rem;
@@ -10,7 +10,7 @@ export const TitleProductsSection = styled.h2`
 `;
 
 export const ProductContainer = styled.div`
-    padding: 5rem 10rem;
+    padding: 5rem 5.7rem;
     padding-top: 2rem;
     display: flex;
     flex-wrap: wrap;

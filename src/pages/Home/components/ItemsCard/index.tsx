@@ -2,59 +2,43 @@ import {
     ContainerTextProduct,
     ItemsCardContainer,
     ItemsCardImage,
-    ItemsCardPriceContainer,
-    ItemsCardPriceSimbol,
-    ItemscardPriceValue,
     ItemsCardSubtitle,
     ItemsCardTitle,
-    ItemsFooter,
-    ProductAmountContainer,
-    ProductCartButton,
-    ProductIconCount,
+    AllProductTypes,
     ProductType
 } from "./styles";
-import expressoTradicional from "../../../../assets/products/expresso-tradicional.png";
-import { Minus, Plus, ShoppingCartSimple } from "phosphor-react";
+import { Footer } from "./footer";
 
-export function ItemsCard() {
+interface ItemsCardProps {
+    type: string;
+    type2?: string;
+    type3?: string;
+    img: string;
+    title: string;
+    subtitle: string;
+}
+
+export function ItemsCard({ img, title, subtitle, type, type2, type3 }: ItemsCardProps) {
     return (
         <ItemsCardContainer>
-            <ItemsCardImage src={expressoTradicional} />
-            <ProductType>
-                TRADICIONAL
-            </ProductType>
+            <ItemsCardImage src={img} />
+            <AllProductTypes>
+                <ProductType>
+                    {type}
+                </ProductType>
+                {type2 && <ProductType>{type2}</ProductType>}
+                {type3 && <ProductType>{type3}</ProductType>}
+            </AllProductTypes>
+
             <ContainerTextProduct>
                 <ItemsCardTitle>
-                    Expresso Tradicional
+                    {title}
                 </ItemsCardTitle>
                 <ItemsCardSubtitle>
-                    O tradicional café feito com água quente e grãos moídos
+                    {subtitle}
                 </ItemsCardSubtitle>
             </ContainerTextProduct>
-            <ItemsFooter>
-                <ItemsCardPriceContainer>
-                    <ItemsCardPriceSimbol>
-                        R$
-                    </ItemsCardPriceSimbol>
-                    <ItemscardPriceValue>
-                        9,90
-                    </ItemscardPriceValue>
-                </ItemsCardPriceContainer>
-
-                <ProductAmountContainer>
-                    <ProductIconCount>
-                        <Minus size={14} weight="bold" />
-                    </ProductIconCount>
-                    <input type="number" defaultValue={1} />
-                    <ProductIconCount>
-                        <Plus size={14} weight="fill"/>
-                    </ProductIconCount>
-                </ProductAmountContainer>
-
-                <ProductCartButton>
-                    <ShoppingCartSimple size={20} weight="fill" />
-                </ProductCartButton>
-            </ItemsFooter>
+            <Footer value={"9.90"} />
         </ItemsCardContainer>
     )
 }

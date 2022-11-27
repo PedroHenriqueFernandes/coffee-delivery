@@ -1,3 +1,4 @@
+import { coffees } from "./coffees.js";
 import { ItemsCard } from "../ItemsCard";
 import { ProductContainer, TitleProductsSection } from "./styles";
 
@@ -6,7 +7,19 @@ export function Products() {
         <>
             <TitleProductsSection>Nossos cafés</TitleProductsSection>
             <ProductContainer>
-                <ItemsCard />
+                {
+                    coffees.map((coffee) => {
+                        return(
+                            <ItemsCard
+                                type={coffee.type.toUpperCase()}
+                                type2={coffee.type2?.toUpperCase()}
+                                img={coffee.img}
+                                title={coffee.title}
+                                subtitle={coffee.subtitle}
+                            />
+                        )
+                    })
+                }
             </ProductContainer>
         </>
     )
