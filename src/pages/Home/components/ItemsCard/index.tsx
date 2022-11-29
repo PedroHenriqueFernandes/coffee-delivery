@@ -16,6 +16,8 @@ interface ItemsCardProps {
     img: string;
     title: string;
     subtitle: string;
+    amount?: number;
+    price?: number;
 }
 
 export function ItemsCard({ img, title, subtitle, type, type2, type3 }: ItemsCardProps) {

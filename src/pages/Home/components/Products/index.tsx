@@ -18,6 +18,7 @@ export function Products() {
                                 img={coffee.img}
                                 title={coffee.title}
                                 subtitle={coffee.subtitle}
+                                price={9.9}
                             />
                         )
                     })
