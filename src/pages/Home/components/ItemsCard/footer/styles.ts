@@ -40,7 +40,7 @@ export const ProductAmountContainer = styled.div`
     border-radius: 6px;
      
     >input {
-        width: 1.25rem;
+        width: 1.7rem;
         height: 1.25rem;
         padding: 8.5px 4px;
         border: 0;
@@ -65,10 +65,15 @@ export const ProductIconCount = styled.div`
     justify-content: center;
     padding: 12px 8px; 
     cursor: pointer;
+    transition: color 0.2s;
 
     svg{
-        color: ${props => props.theme['purple-500']};
+        color: ${props => props.theme['purple-700']};
     }
+
+    &:hover svg{
+        color: ${props => props.theme['purple-500']};
+    };
 `;
 
 export const ProductCartButton = styled.button`

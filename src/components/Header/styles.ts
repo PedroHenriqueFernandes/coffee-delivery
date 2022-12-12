@@ -47,6 +47,10 @@ export const CartAndLocationContainer = styled.div`
         font-size: 0.875rem;
         line-height: 1.1375rem;
     }
+
+    nav a{
+        text-decoration: none;
+    }
 `
 
 export const BackgroundItemsInCart = styled.div`

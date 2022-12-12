@@ -10,15 +10,17 @@ import {
 import { Footer } from "./footer";
 
 interface ItemsCardProps {
+    id: string;
     type: string;
     type2?: string;
     type3?: string;
     img: string;
     title: string;
     subtitle: string;
+    amount: number;
 }
 
-export function ItemsCard({ img, title, subtitle, type, type2, type3 }: ItemsCardProps) {
+export function ItemsCard({ id, img, title, subtitle, type, type2, type3 }: ItemsCardProps) {
     return (
         <ItemsCardContainer>
             <ItemsCardImage src={img} />
@@ -38,7 +40,17 @@ export function ItemsCard({ img, title, subtitle, type, type2, type3 }: ItemsCar
                     {subtitle}
                 </ItemsCardSubtitle>
             </ContainerTextProduct>
-            <Footer value={"9.90"} />
+            <Footer 
+                value={"9.90"} 
+                type={type}
+                type2={type2}
+                type3={type3}
+                img={img}
+                title={title}
+                subtitle={subtitle}
+                amount={0}
+                id={id}
+            />
         </ItemsCardContainer>
     )
 }
