@@ -75,7 +75,7 @@ export const TextBoldS = styled.p`
 `;
 
 export const ComponentsTag = styled.p`
-      font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 0.625rem;
     line-height: 1.8125rem;
     font-weight: bold;
