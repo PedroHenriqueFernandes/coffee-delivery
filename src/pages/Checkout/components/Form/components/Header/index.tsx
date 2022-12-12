@@ -1,17 +1,31 @@
-import { MapPinLine } from "phosphor-react";
+import { MapPinLine, CurrencyDollar } from "phosphor-react";
 import { TextRegularM, TextRegularS } from "../../../../../../styles/fonts";
-import { InfoFormContainer } from "./styles";
+import { CurrencyDollarContainer, InfoFormContainer, MapPinLineContainer } from "./styles";
 
-export function Header() {
+interface HeaderProps {
+    textRegularM: String;
+    textRegularS: String;
+    icon?: String;
+}
+
+export function Header({ textRegularM, textRegularS, icon }: HeaderProps) {
     return (
-        <InfoFormContainer>
-            <MapPinLine size={22} />
+        <InfoFormContainer >
+            {
+                icon === "MapPinLine" ?
+                    <MapPinLineContainer>
+                        <MapPinLine size={22} />
+                    </MapPinLineContainer> :
+                    <CurrencyDollarContainer>
+                        <CurrencyDollar size={22} />
+                    </CurrencyDollarContainer>
+            }
             <div>
                 <TextRegularM>
-                    Endereço de Entrega
+                    {textRegularM}
                 </TextRegularM>
                 <TextRegularS>
-                    Informe o endereço onde deseja receber seu pedido
+                    {textRegularS}
                 </TextRegularS>
             </div>
         </InfoFormContainer>
