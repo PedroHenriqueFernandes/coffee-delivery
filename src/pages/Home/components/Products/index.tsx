@@ -21,6 +21,7 @@ export function Products() {
                                 title={coffee.title}
                                 subtitle={coffee.subtitle}
                                 amount={0}
+                                price={9.9}
                             />
                         )
                     })
