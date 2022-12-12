@@ -10,7 +10,18 @@ export const FormContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 12px;
+`;
+
+export const DeliveryFieldsContainer = styled.div`
     background-color: ${props => props.theme["card"]};
+    border-radius: 6px;
+`;
+
+export const PaymentMethodsFieldsContainer = styled.div`
+    background-color: ${props => props.theme["card"]};
+    border-radius: 6px;
+    margin-bottom: 2rem;
 `;
 
 export const TitleXSContainer = styled.div`
