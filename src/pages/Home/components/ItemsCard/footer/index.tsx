@@ -1,8 +1,9 @@
 
-import { Minus, Plus, ShoppingCartSimple } from "phosphor-react";
-import { useContext, useState, ChangeEvent } from "react";
+import { ShoppingCartSimple } from "phosphor-react";
+import { useContext, useState } from "react";
 import { ItemsCartContext } from "../../../../../contexts/ItemsCartContext";
-import { ItemsCardPriceContainer, ItemsCardPriceSimbol, ItemscardPriceValue, ItemsFooter, ProductAmountContainer, ProductCartButton, ProductIconCount } from "./styles";
+import { Button } from "./components/Button";
+import { ItemsCardPriceContainer, ItemsCardPriceSimbol, ItemscardPriceValue, ItemsFooter, ProductCartButton } from "./styles";
 
 interface FooterProps {
     id: string;
@@ -25,21 +26,11 @@ export function Footer({
     title,
     subtitle,
     value
-}: FooterProps){
+}: FooterProps) {
     const [amountItem, setAmountItem] = useState(1);
-    const {addItemsToCart} = useContext(ItemsCartContext)
+    const { addItemsToCart } = useContext(ItemsCartContext)
 
-    function lowerAmount(){
-        if(amountItem > 1){
-            setAmountItem(amountItem - 1);
-        }
-    }
-
-    function increaseAmount(){
-        setAmountItem(amountItem + 1);
-    }
-
-    function addItemsToCartButton(){
+    function addItemsToCartButton() {
         addItemsToCart({
             id: id,
             type: type,
@@ -52,34 +43,24 @@ export function Footer({
         })
     }
 
-    function handleamountItems(event: ChangeEvent<HTMLInputElement>){
-        setAmountItem(Number(event.target.value));
-    }
-
-    return(
+    return (
         <ItemsFooter>
-                <ItemsCardPriceContainer>
-                    <ItemsCardPriceSimbol>
-                        R$
-                    </ItemsCardPriceSimbol>
-                    <ItemscardPriceValue>
-                        {value}
-                    </ItemscardPriceValue>
-                </ItemsCardPriceContainer>
+            <ItemsCardPriceContainer>
+                <ItemsCardPriceSimbol>
+                    R$
+                </ItemsCardPriceSimbol>
+                <ItemscardPriceValue>
+                    {value}
+                </ItemscardPriceValue>
+            </ItemsCardPriceContainer>
 
-                <ProductAmountContainer>
-                    <ProductIconCount onClick={lowerAmount}>
-                        <Minus size={14} weight="bold"/>
-                    </ProductIconCount>
-                        <input type="number" value={amountItem} onChange={handleamountItems} />
-                    <ProductIconCount onClick={increaseAmount}>
-                        <Plus size={14} weight="fill"/>
-                    </ProductIconCount>
-                </ProductAmountContainer>
 
-                <ProductCartButton onClick={addItemsToCartButton}>
-                    <ShoppingCartSimple size={20} weight="fill" />
-                </ProductCartButton>
-            </ItemsFooter>
+            <Button amountItem={amountItem} setAmountItem={setAmountItem} />
+
+
+            <ProductCartButton onClick={addItemsToCartButton}>
+                <ShoppingCartSimple size={20} weight="fill" />
+            </ProductCartButton>
+        </ItemsFooter>
     )
 }
