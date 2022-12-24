@@ -1,8 +1,8 @@
 
 import { ShoppingCartSimple } from "phosphor-react";
 import { useContext, useState } from "react";
+import { ButtonAmountItems } from "../../../../../components/Buttons/AmountItems";
 import { ItemsCartContext } from "../../../../../contexts/ItemsCartContext";
-import { Button } from "./components/Button";
 import { ItemsCardPriceContainer, ItemsCardPriceSimbol, ItemscardPriceValue, ItemsFooter, ProductCartButton } from "./styles";
 
 interface FooterProps {
@@ -55,7 +55,7 @@ export function Footer({
             </ItemsCardPriceContainer>
 
 
-            <Button amountItem={amountItem} setAmountItem={setAmountItem} />
+            <ButtonAmountItems amountItem={amountItem} setAmountItem={setAmountItem} />
 
 
             <ProductCartButton onClick={addItemsToCartButton}>

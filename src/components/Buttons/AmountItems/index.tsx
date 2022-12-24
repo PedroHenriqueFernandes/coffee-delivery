@@ -7,7 +7,7 @@ interface ButtonProps {
     amountItem: number;
 }
 
-export function Button({amountItem, setAmountItem}: ButtonProps) {
+export function ButtonAmountItems({amountItem, setAmountItem}: ButtonProps) {
     function lowerAmount(){
         if(amountItem > 1){
             setAmountItem(amountItem - 1);
