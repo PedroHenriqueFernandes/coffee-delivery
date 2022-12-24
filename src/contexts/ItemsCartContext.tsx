@@ -13,6 +13,7 @@ interface ItemsCartProviderProps {
     title: string;
     subtitle: string;
     amount: number;
+    price: number;
 }
 
 interface ItemsCartContext{
@@ -25,6 +26,7 @@ interface ItemsCartContext{
         title: string;
         subtitle: string;
         amount: number;
+        price: number;
     }[];
     addItemsToCart: (item: ItemsCart) => void;
     removeItemsFromCart: (id: string) => void;
@@ -33,7 +35,7 @@ interface ItemsCartContext{
 export const ItemsCartContext = createContext({} as ItemsCartContext);
 
 export function ItemsCartProvider({ children }: ItemsCartProviderProps) {
-    const [itemsInCart, setItemsInCart] = useState([{amount: 0} as ItemsCart])
+    const [itemsInCart, setItemsInCart] = useState([{amount: 0, price: 9.9} as ItemsCart])
 
     function addItemsToCart({id, type, type2, type3, img, title, subtitle, amount} : ItemsCart) {
         setItemsInCart([...itemsInCart, {
@@ -45,6 +47,7 @@ export function ItemsCartProvider({ children }: ItemsCartProviderProps) {
             title,
             subtitle,
             amount,
+            price: 9.90
         }])
     }
 
