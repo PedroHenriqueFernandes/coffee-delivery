@@ -30,6 +30,7 @@ interface ItemsCartContext{
     }[];
     addItemsToCart: (item: ItemsCart) => void;
     removeItemsFromCart: (id: string) => void;
+    handleAmountItem: (id: string, amountItem: number) => void;
 }
 
 export const ItemsCartContext = createContext({} as ItemsCartContext);
@@ -51,17 +52,21 @@ export function ItemsCartProvider({ children }: ItemsCartProviderProps) {
         }])
     }
 
-    function handleAmountItemInCart(){
-        setAmountItem(amountItem + 1)
-    }
-
     function removeItemsFromCart(id: string) {
         const newItems = itemsInCart.filter(item => item.id !== id)
         setItemsInCart(newItems)
     }
 
+    function handleAmountItem(id: string, amountItem: number) {
+        const newItems = itemsInCart.map(item => item.id === id ? {
+            ...item,
+            amount: amountItem
+        } : item)
+        setItemsInCart(newItems)
+    }
+
     return (
-        <ItemsCartContext.Provider value={{ itemsInCart, addItemsToCart, removeItemsFromCart }}>
+        <ItemsCartContext.Provider value={{ itemsInCart, addItemsToCart, removeItemsFromCart, handleAmountItem }}>
             {children}
         </ItemsCartContext.Provider>
     )
