@@ -6,13 +6,21 @@ import { useState } from "react";
 export function PaymentMethod(){
     const [method, setMethod] = useState('')
 
-    function handleMethod(){
+    function handleMethodCreditCard(){
         setMethod("CARTÃO DE CRÉDITO")
+    }
+
+    function handleMethodDebitCard(){
+        setMethod("CARTÃO DE DÉBITO")
+    }
+
+    function handleMethodMoney(){
+        setMethod("DINHEIRO")
     }
     
     return (
         <PaymentMethodContainer>
-            <PaymentMethods onClick={handleMethod}>
+            <PaymentMethods onClick={handleMethodCreditCard} >
                 <CreditCard size={16} /> 
                 <ComponentsButtonS>
                     CARTÃO DE CRÉDITO
@@ -20,13 +28,13 @@ export function PaymentMethod(){
             </PaymentMethods>
             <PaymentMethods>
                 <Bank size={16} /> 
-                <ComponentsButtonS>
+                <ComponentsButtonS onClick={handleMethodDebitCard}>
                     CARTÃO DE DÉBITO
                 </ComponentsButtonS>
             </PaymentMethods>
             <PaymentMethods>
                 <Money size={16} /> 
-                <ComponentsButtonS>
+                <ComponentsButtonS onClick={handleMethodMoney}>
                     DINHEIRO
                 </ComponentsButtonS>
             </PaymentMethods>

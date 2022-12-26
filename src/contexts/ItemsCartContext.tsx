@@ -51,6 +51,10 @@ export function ItemsCartProvider({ children }: ItemsCartProviderProps) {
         }])
     }
 
+    function handleAmountItemInCart(){
+        setAmountItem(amountItem + 1)
+    }
+
     function removeItemsFromCart(id: string) {
         const newItems = itemsInCart.filter(item => item.id !== id)
         setItemsInCart(newItems)

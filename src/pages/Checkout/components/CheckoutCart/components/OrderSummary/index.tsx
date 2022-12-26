@@ -19,7 +19,7 @@ export function OrderSumary() {
                     Total de itens:
                 </TextRegularS>
                 <TextRegularS>
-                    R$ {priceTotal}
+                    R$ {priceTotal.toFixed(2).toString().replace('.', ',')}
                 </TextRegularS>
             </ContainerTexts>
 

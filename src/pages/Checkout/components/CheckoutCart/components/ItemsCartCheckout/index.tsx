@@ -15,9 +15,7 @@ import {
 
 export function ItemsCartCheckout() {
     const { 
-        itemsInCart, 
-        addItemsToCart, 
-        removeItemsFromCart 
+        itemsInCart
     } = useContext(ItemsCartContext)
     
     const [amountItem, setAmountItem] = useState(1);
@@ -27,7 +25,7 @@ export function ItemsCartCheckout() {
             {itemsInCart.map(item => {
                 if (item.amount > 0) {
                     return (
-                        <>
+                        <div key={item.id}>
                             <ItemCartCheckout>
                                 <ImageAndFunctionalitiesContainer>
                                     <ImageContainer>
@@ -49,7 +47,7 @@ export function ItemsCartCheckout() {
                                 </TextBoldM>
                             </ItemCartCheckout>
                             <hr />
-                        </>
+                        </div>
                     )
                 }
             })

@@ -40,6 +40,7 @@ export function Footer({
             title: title,
             subtitle: subtitle,
             amount: amountItem,
+            price: 9.9
         })
     }
 
