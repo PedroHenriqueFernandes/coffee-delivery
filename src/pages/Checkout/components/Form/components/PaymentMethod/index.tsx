@@ -3,7 +3,14 @@ import { CreditCard, Bank, Money } from "phosphor-react"
 import { ComponentsButtonS } from "../../../../../../styles/fonts";
 import { useState } from "react";
 
+
 export function PaymentMethod() {
+    enum Method {
+        CREDIT_CARD = "CARTÃO DE CRÉDITO",
+        DEBIT_CARD = "CARTÃO DE DÉBITO",
+        MONEY = "DINHEIRO"
+    }
+
     const [method, setMethod] = useState('')
     const [methodCreditCard, setMethodCreditCard] = useState(false)
     const [methodDebitCard, setMethodDebitCard] = useState(false)
