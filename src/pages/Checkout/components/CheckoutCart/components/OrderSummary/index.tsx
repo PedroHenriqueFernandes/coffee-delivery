@@ -5,12 +5,7 @@ import { TextBoldL, TextRegularS } from "../../../../../../styles/fonts"
 import { ContainerTexts, OrderSumaryContainer } from "./styltes"
 
 export function OrderSumary() {
-    const { itemsInCart } = useContext(ItemsCartContext)
-    const [priceTotal, setPriceTotal] = useState(0)
-
-    useEffect(() => {
-        setPriceTotal(itemsInCart.map(item => item.price).reduce((a, b) => a + b, -9.9))
-    }, [itemsInCart])
+    const { priceTotal } = useContext(ItemsCartContext)
 
     return (
         <OrderSumaryContainer>

@@ -43,3 +43,7 @@ export const ProductAmountContainer = styled.div`
         -moz-appearance: textfield;
     }
 `;
+
+export const ProductIconCountScreenCheckout = styled(ProductIconCount)`
+    padding: 9px 8px; 
+`

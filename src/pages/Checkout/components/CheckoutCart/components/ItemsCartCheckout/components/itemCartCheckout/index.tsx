@@ -26,7 +26,7 @@ export function ItemCartCheckout({ id, img, title, amount }: ItemCartCheckoutPro
                         {title}
                     </TextRegularM>
                     <ButtonsContainer>
-                        <ButtonAmountItems amountItem={amountItem} setAmountItem={setAmountItem} id={id} />
+                        <ButtonAmountItems screenCheckout amountItem={amountItem} setAmountItem={setAmountItem} id={id} />
                         <ButtonRemove />
                     </ButtonsContainer>
                 </FunctionalitiesContainer>

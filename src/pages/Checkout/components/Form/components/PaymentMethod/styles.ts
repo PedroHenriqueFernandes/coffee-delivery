@@ -23,3 +23,8 @@ export const PaymentMethods = styled.div`
         color: ${props => props.theme["purple-500"]};
     }
 `;
+
+export const PaymentMethodsWithBorder = styled(PaymentMethods)`
+    border: 1px solid ${props => props.theme["purple-500"]};
+    background-color: ${props => props.theme["purple-100"]};
+`;
