@@ -8,7 +8,7 @@ export const PaymentMethodContainer = styled.div`
     gap: 0.75rem;
 `;
 
-export const PaymentMethods = styled.div`
+export const PaymentMethods = styled.div<{Method ?: boolean}>`
     background-color: ${props => props.theme["button"]};
     border-radius: 6px;
     display: flex;
@@ -22,9 +22,7 @@ export const PaymentMethods = styled.div`
     svg{
         color: ${props => props.theme["purple-500"]};
     }
-`;
 
-export const PaymentMethodsWithBorder = styled(PaymentMethods)`
-    border: 1px solid ${props => props.theme["purple-500"]};
-    background-color: ${props => props.theme["purple-100"]};
+    border: ${props => props.Method === true ? "1px solid " + props.theme["purple-500"] : "none"};
+    background-color: ${props => props.Method === true ? props.theme["purple-100"] : props.theme["button"]};
 `;
