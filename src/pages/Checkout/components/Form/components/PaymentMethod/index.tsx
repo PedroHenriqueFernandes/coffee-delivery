@@ -44,7 +44,6 @@ export function PaymentMethod() {
                     {MONEY}
                 </ComponentsButtonS>
             </PaymentMethodMoney>
-
         </PaymentMethodContainer>
     )
 }
