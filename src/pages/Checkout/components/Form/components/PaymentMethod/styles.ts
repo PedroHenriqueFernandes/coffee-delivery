@@ -8,7 +8,7 @@ export const PaymentMethodContainer = styled.div`
     gap: 0.75rem;
 `;
 
-export const PaymentMethods = styled.div<{Method ?: boolean}>`
+export const PaymentMethods = styled.div<{Method ?: string}>`
     background-color: ${props => props.theme["button"]};
     border-radius: 6px;
     display: flex;
@@ -22,7 +22,19 @@ export const PaymentMethods = styled.div<{Method ?: boolean}>`
     svg{
         color: ${props => props.theme["purple-500"]};
     }
+`;
 
-    border: ${props => props.Method === true ? "1px solid " + props.theme["purple-500"] : "none"};
-    background-color: ${props => props.Method === true ? props.theme["purple-100"] : props.theme["button"]};
+export const PaymentMethodCreditcard = styled(PaymentMethods)`
+    border: ${props => props.Method === "CARTÃO DE CRÉDITO" ? "1px solid " + props.theme["purple-500"] : "none"};
+    background-color: ${props => props.Method === "CARTÃO DE CRÉDITO" ? props.theme["purple-100"] : props.theme["button"]};
+`;
+
+export const PaymentMethodDebitCard = styled(PaymentMethods)`
+    border: ${props => props.Method === "CARTÃO DE DÉBITO" ? "1px solid " + props.theme["purple-500"] : "none"};
+    background-color: ${props => props.Method === "CARTÃO DE DÉBITO" ? props.theme["purple-100"] : props.theme["button"]};
+`;
+
+export const PaymentMethodMoney = styled(PaymentMethods)`
+    border: ${props => props.Method === "DINHEIRO" ? "1px solid " + props.theme["purple-500"] : "none"};
+    background-color: ${props => props.Method === "DINHEIRO" ? props.theme["purple-100"] : props.theme["button"]};
 `;

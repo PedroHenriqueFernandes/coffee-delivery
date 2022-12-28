@@ -4,7 +4,7 @@ interface ItemsCartProviderProps {
     children: ReactNode;
   }
 
-  interface ItemsCart {
+interface ItemsCart {
     id: string;
     type: string;
     type2?: string;

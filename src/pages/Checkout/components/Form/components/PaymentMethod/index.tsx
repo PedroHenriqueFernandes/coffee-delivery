@@ -1,64 +1,49 @@
-import { PaymentMethodContainer, PaymentMethods } from "./styles";
+import { PaymentMethodContainer, PaymentMethodCreditcard, PaymentMethodDebitCard, PaymentMethodMoney } from "./styles";
 import { CreditCard, Bank, Money } from "phosphor-react"
 import { ComponentsButtonS } from "../../../../../../styles/fonts";
 import { useState } from "react";
 
 
 export function PaymentMethod() {
-    enum Method {
-        CREDIT_CARD = "CARTÃO DE CRÉDITO",
-        DEBIT_CARD = "CARTÃO DE DÉBITO",
-        MONEY = "DINHEIRO"
-    }
-
+    const CREDIT_CARD = "CARTÃO DE CRÉDITO"
+    const DEBIT_CARD = "CARTÃO DE DÉBITO"
+    const MONEY = "DINHEIRO"
+ 
     const [method, setMethod] = useState('')
-    const [methodCreditCard, setMethodCreditCard] = useState(false)
-    const [methodDebitCard, setMethodDebitCard] = useState(false)
-    const [methodMoney, setMethodMoney] = useState(false)
-
     function handleMethodCreditCard() {
-        setMethod("CARTÃO DE CRÉDITO")
-        setMethodCreditCard(true)
-        setMethodDebitCard(false)
-        setMethodMoney(false)
+        setMethod(CREDIT_CARD)
     }
 
     function handleMethodDebitCard() {
-        setMethod("CARTÃO DE DÉBITO")
-        setMethodDebitCard(true)
-        setMethodCreditCard(false)
-        setMethodMoney(false)
+        setMethod(DEBIT_CARD)
     }
 
     function handleMethodMoney() {
-        setMethod("DINHEIRO")
-        setMethodMoney(true)
-        setMethodCreditCard(false)
-        setMethodDebitCard(false)
+        setMethod(MONEY)
     }
 
     return (
         <PaymentMethodContainer>
-            <PaymentMethods Method={methodCreditCard} onClick={handleMethodCreditCard} >
+            <PaymentMethodCreditcard Method={method} onClick={handleMethodCreditCard} >
                 <CreditCard size={16} />
                 <ComponentsButtonS>
-                    CARTÃO DE CRÉDITO
+                    {CREDIT_CARD}
                 </ComponentsButtonS>
-            </PaymentMethods>
+            </PaymentMethodCreditcard>
 
-            <PaymentMethods Method={methodDebitCard} onClick={handleMethodDebitCard}>
+            <PaymentMethodDebitCard Method={method} onClick={handleMethodDebitCard}>
                 <Bank size={16} />
                 <ComponentsButtonS>
-                    CARTÃO DE DÉBITO
+                    {DEBIT_CARD}
                 </ComponentsButtonS>
-            </PaymentMethods>
+            </PaymentMethodDebitCard>
 
-            <PaymentMethods Method={methodMoney} onClick={handleMethodMoney}>
+            <PaymentMethodMoney Method={method} onClick={handleMethodMoney}>
                 <Money size={16} />
                 <ComponentsButtonS>
-                    DINHEIRO
+                    {MONEY}
                 </ComponentsButtonS>
-            </PaymentMethods>
+            </PaymentMethodMoney>
 
         </PaymentMethodContainer>
     )
