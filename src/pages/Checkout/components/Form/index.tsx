@@ -3,23 +3,31 @@ import { TitleXS } from "../../../../styles/fonts";
 import { PaymentMethod } from "./components/PaymentMethod";
 import { useFormContext } from "react-hook-form";
 
-import { 
-    Input, 
-    Container, 
-    InputFlex, 
-    FormContainer, 
-    InputContainer, 
-    TitleXSContainer, 
-    DeliveryFieldsContainer, 
-    PaymentMethodsFieldsContainer 
+import {
+    Input,
+    Container,
+    InputFlex,
+    FormContainer,
+    InputContainer,
+    TitleXSContainer,
+    DeliveryFieldsContainer,
+    PaymentMethodsFieldsContainer
 } from "./styles";
 import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { FormDataContext } from "../../../../contexts/FormDataDeliveryContext";
 
 export function Form() {
     const methods = useContext(FormDataContext);
-    const {register} = methods.methods;
-    
+    const { register, handleSubmit } = methods.methods;
+
+    const navigate = useNavigate()
+
+    function addressOrder() {
+        console.log(methods.methods.getValues())
+        navigate("/sucess")
+    }
+
     return (
         <Container>
             <TitleXSContainer>
@@ -28,7 +36,7 @@ export function Form() {
                 </TitleXS>
             </TitleXSContainer>
 
-            <FormContainer>
+            <FormContainer id="FormDataDelivery" onSubmit={handleSubmit(addressOrder)} action="">
                 <DeliveryFieldsContainer>
                     <Header
                         textRegularM={"Endereço de Entrega"}
@@ -36,16 +44,16 @@ export function Form() {
                         icon={"MapPinLine"}
                     />
                     <InputContainer>
-                        <Input id="cep" {...register("cep")} placeholder="CEP" width={'35%'} />
-                        <Input id="street" {...register("street")} placeholder="Rua" width={'100%'} />
+                        <Input id="cep" {...register("cep")} placeholder="CEP" width={'35%'} required />
+                        <Input id="street" {...register("street")} placeholder="Rua" width={'100%'} required />
                         <InputFlex>
-                            <Input id="number" {...register("number")} placeholder="Número" width={'35%'} />
-                            <Input id="complement" {...register("complement")} placeholder="Complemento" width={'65%'} />
+                            <Input id="number" {...register("number")} type="number" placeholder="Número" width={'35%'} required />
+                            <Input id="complement" {...register("complement")} placeholder="Complemento" width={'65%'} required />
                         </InputFlex>
                         <InputFlex>
-                            <Input id="district" {...register("district")} placeholder="Bairro" width={'36%'} />
-                            <Input id="city" {...register("city")} placeholder="Cidade" width={'54%'} />
-                            <Input id="state" {...register("state")} placeholder="UF" width={'10%'} />
+                            <Input id="district" {...register("district")} placeholder="Bairro" width={'36%'} required />
+                            <Input id="city" {...register("city")} placeholder="Cidade" width={'54%'} required />
+                            <Input id="state" {...register("state")} placeholder="UF" width={'10%'} required />
                         </InputFlex>
                     </InputContainer>
                 </DeliveryFieldsContainer>

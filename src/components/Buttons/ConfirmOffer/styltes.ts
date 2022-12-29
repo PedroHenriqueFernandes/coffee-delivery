@@ -15,4 +15,9 @@ export const ContainerButtons = styled.button`
     p{
         color: ${props => props.theme["white"]};
     }
+
+    &:disabled{
+        background: ${props => props.theme["yellow-100"]};
+        cursor: not-allowed;
+    }
 `;
