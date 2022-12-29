@@ -1,13 +1,25 @@
-import { useContext, useEffect, useState } from "react";
-import { FormContext } from "../../../../contexts/dataDelivery";
-import { TitleXS } from "../../../../styles/fonts";
 import { Header } from "./components/Header";
+import { TitleXS } from "../../../../styles/fonts";
 import { PaymentMethod } from "./components/PaymentMethod";
-import { FormContainer, Container, TitleXSContainer, Input, InputContainer, InputFlex, DeliveryFieldsContainer, PaymentMethodsFieldsContainer } from "./styles";
+import { useFormContext } from "react-hook-form";
+
+import { 
+    Input, 
+    Container, 
+    InputFlex, 
+    FormContainer, 
+    InputContainer, 
+    TitleXSContainer, 
+    DeliveryFieldsContainer, 
+    PaymentMethodsFieldsContainer 
+} from "./styles";
+import { useContext } from "react";
+import { FormDataContext } from "../../../../contexts/FormDataDeliveryContext";
 
 export function Form() {
-    const { dataDelivery, handleDataDelivery } = useContext(FormContext)
-
+    const methods = useContext(FormDataContext);
+    const {register} = methods.methods;
+    
     return (
         <Container>
             <TitleXSContainer>
@@ -24,16 +36,16 @@ export function Form() {
                         icon={"MapPinLine"}
                     />
                     <InputContainer>
-                        <Input placeholder="CEP" width={'35%'} />
-                        <Input placeholder="Rua" width={'100%'} />
+                        <Input id="cep" {...register("cep")} placeholder="CEP" width={'35%'} />
+                        <Input id="street" {...register("street")} placeholder="Rua" width={'100%'} />
                         <InputFlex>
-                            <Input placeholder="Número" width={'35%'} />
-                            <Input placeholder="Complemento" width={'65%'} />
+                            <Input id="number" {...register("number")} placeholder="Número" width={'35%'} />
+                            <Input id="complement" {...register("complement")} placeholder="Complemento" width={'65%'} />
                         </InputFlex>
                         <InputFlex>
-                            <Input placeholder="Bairro" width={'36%'} />
-                            <Input placeholder="Cidade" width={'54%'} />
-                            <Input placeholder="UF" width={'10%'} />
+                            <Input id="district" {...register("district")} placeholder="Bairro" width={'36%'} />
+                            <Input id="city" {...register("city")} placeholder="Cidade" width={'54%'} />
+                            <Input id="state" {...register("state")} placeholder="UF" width={'10%'} />
                         </InputFlex>
                     </InputContainer>
                 </DeliveryFieldsContainer>

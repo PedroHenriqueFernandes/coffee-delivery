@@ -3,7 +3,7 @@ import { ContainerButtons } from "./styltes";
 
 export function ConfirmOffer(){
     return(
-        <ContainerButtons>
+        <ContainerButtons type="submit" form="FormDataDelivery">
             <ComponentsButtonG>
                 CONFIRMAR PEDIDO
             </ComponentsButtonG>
