@@ -1,5 +1,5 @@
 import { IllustrationContainer } from "./styles";
-import illustration from "../../../../assets/illustration.svg"
+import illustration from "../../../../assets/Illustration.svg"
 
 export function Illustration(){
     return(
