@@ -23,8 +23,12 @@ export function Form() {
 
     const navigate = useNavigate()
 
+    register("paymentMethod", { required: {
+        value: true,
+        message: "Escolha uma forma de pagamento"
+    }})
+
     function addressOrder() {
-        console.log(methods.methods.getValues())
         navigate("/sucess")
     }
 
@@ -48,7 +52,7 @@ export function Form() {
                         <Input id="street" {...register("street")} placeholder="Rua" width={'100%'} required />
                         <InputFlex>
                             <Input id="number" {...register("number")} type="number" placeholder="Número" width={'35%'} required />
-                            <Input id="complement" {...register("complement")} placeholder="Complemento" width={'65%'} required />
+                            <Input id="complement" {...register("complement")} placeholder="Complemento" width={'65%'} />
                         </InputFlex>
                         <InputFlex>
                             <Input id="district" {...register("district")} placeholder="Bairro" width={'36%'} required />

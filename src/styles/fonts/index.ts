@@ -53,7 +53,21 @@ export const TextRegularM = styled.p`
     font-weight: regular;
 `;
 
+export const TextRegularMSpan = styled.span`
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    line-height: 1.3rem;
+    font-weight: regular;
+`;
+
 export const TextBoldM = styled.p`
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    line-height: 1.3rem;
+    font-weight: bold;
+`;
+
+export const TextBoldMSpan = styled.span`
     font-family: 'Roboto', sans-serif;
     font-size: 1rem;
     line-height: 1.3rem;

@@ -13,7 +13,7 @@ interface defaultValues {
     state: "";
     number: "";
     complement?: "";
-    paymentMethod?: "";
+    paymentMethod: "";
 }
 
 interface formContextProps{
@@ -24,7 +24,6 @@ export const FormDataContext = createContext({} as any);
 
 export function FormDataDeliveryProvider({ children }: FormProvider) {
     const methods = useForm<defaultValues>();
-    console.log(methods)
 
     return (
         <FormDataContext.Provider value={{methods}}>

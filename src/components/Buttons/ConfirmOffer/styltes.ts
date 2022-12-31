@@ -1,5 +1,15 @@
 import styled from "styled-components";
 
+export const Container = styled.div`
+    p{
+        color: ${props => props.theme["red-500"]};
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+`;
+
 export const ContainerButtons = styled.button`
     display: flex;
     justify-content: center;
