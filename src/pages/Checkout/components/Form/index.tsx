@@ -1,7 +1,10 @@
 import { Header } from "./components/Header";
-import { TitleXS } from "../../../../styles/fonts";
 import { PaymentMethod } from "./components/PaymentMethod";
-import { useFormContext } from "react-hook-form";
+
+import { useNavigate } from "react-router-dom";
+import { useContext, useEffect } from "react";
+import { zipcodeMask } from "../../../../utils/ZipCodeMask";
+import { FormDataContext } from "../../../../contexts/FormDataDeliveryContext";
 
 import {
     Input,
@@ -13,21 +16,34 @@ import {
     DeliveryFieldsContainer,
     PaymentMethodsFieldsContainer
 } from "./styles";
-import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
-import { FormDataContext } from "../../../../contexts/FormDataDeliveryContext";
+import { TitleXS } from "../../../../styles/fonts";
+import { limitStringSize } from "../../../../utils/LimitStringSize";
 
 export function Form() {
     const methods = useContext(FormDataContext);
-    const { register, handleSubmit } = methods.methods;
+    const { register, handleSubmit, setValue, watch } = methods.methods;
 
     const navigate = useNavigate()
 
-    register("paymentMethod", { required: {
-        value: true,
-        message: "Escolha uma forma de pagamento"
-    }})
+    register("paymentMethod", {
+        required: {
+            value: true,
+            message: "Escolha uma forma de pagamento"
+        }
+    })
 
+    const zipCodeValue = watch("cep");
+
+    useEffect(() => {
+        setValue("cep", zipcodeMask(zipCodeValue))
+    }, [zipCodeValue])
+
+    const stateValue = watch("state");
+
+    useEffect(() => {
+        setValue("state", limitStringSize(stateValue))
+    }, [stateValue])
+    
     function addressOrder() {
         navigate("/sucess")
     }
@@ -48,7 +64,14 @@ export function Form() {
                         icon={"MapPinLine"}
                     />
                     <InputContainer>
-                        <Input id="cep" {...register("cep")} placeholder="CEP" width={'35%'} required />
+                        <Input
+                            id="cep"
+                            {...register("cep")}
+                            placeholder="CEP"
+                            width={'35%'}
+                            required
+                        />
+
                         <Input id="street" {...register("street")} placeholder="Rua" width={'100%'} required />
                         <InputFlex>
                             <Input id="number" {...register("number")} type="number" placeholder="Número" width={'35%'} required />

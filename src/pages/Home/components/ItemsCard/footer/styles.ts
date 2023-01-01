@@ -32,11 +32,11 @@ export const ItemscardPriceValue = styled(ItemsCardPriceSimbol)`
     line-height: 31.2rem;
 `;
 
-export const ProductCartButton = styled.button`
+export const ProductCartButton = styled.button<{ItemAddToCart: boolean}>`
     display: flex;
     align-items: center;
     justify-content: center;
-    background: ${props => props.theme['purple-700']};
+    background: ${props => props.ItemAddToCart ? props.theme['green-500'] : props.theme['purple-700']};
     border-radius: 6px;
     padding: 10.06px;
     border: 0;

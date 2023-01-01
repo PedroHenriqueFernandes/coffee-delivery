@@ -8,7 +8,6 @@ export function DataAddessDelivery() {
     const methods = useContext(FormDataContext);
     const values = methods.methods.getValues();
     const space = " ";
-    console.log(values)
     return (
         <Container>
             <Content>

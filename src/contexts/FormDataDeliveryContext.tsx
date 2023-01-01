@@ -16,10 +16,6 @@ interface defaultValues {
     paymentMethod: "";
 }
 
-interface formContextProps{
-    methods: UseFormReturn<defaultValues, any>;
-}
-
 export const FormDataContext = createContext({} as any);
 
 export function FormDataDeliveryProvider({ children }: FormProvider) {

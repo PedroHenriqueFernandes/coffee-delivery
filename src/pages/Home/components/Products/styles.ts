@@ -7,6 +7,10 @@ export const TitleProductsSection = styled.h2`
     font-weight: 900;
     line-height: 2.6rem;
     color: ${props => props.theme['subtitle']};
+
+    @media screen and (max-width: 500px){
+        padding: 0rem 2rem 2rem 2rem;
+    }
 `;
 
 export const ProductContainer = styled.div`
@@ -17,4 +21,9 @@ export const ProductContainer = styled.div`
     align-items: center;
     justify-content: flex-start;
     gap: 2rem;
+
+    @media screen and (max-width: 500px){
+        padding: 0rem 2rem;
+        justify-content: center;
+    }
 `;

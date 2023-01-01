@@ -1,43 +1,34 @@
-import { createContext, ReactNode, useEffect, useState } from "react";
-
+import { createContext, ReactNode, useEffect, useReducer, useState } from "react";
+import { addNewItemInCartAction, handleAmountItemAction, removeItemsFromCartAction } from "../reducer/ItemsInCart/actions";
+import { ItemsCart, itemsInCartReducer } from "../reducer/ItemsInCart/reducer";
 interface ItemsCartProviderProps {
     children: ReactNode;
-  }
-
-interface ItemsCart {
-    id: string;
-    type: string;
-    type2?: string;
-    type3?: string;
-    img: string;
-    title: string;
-    subtitle: string;
-    amount: number;
-    price: number;
 }
 
-interface ItemsCartContext{
-    itemsInCart: {
-        id: string;
-        type: string;
-        type2?: string;
-        type3?: string;
-        img: string;
-        title: string;
-        subtitle: string;
-        amount: number;
-        price: number;
-    }[];
+interface ItemsCartContext {
+    priceTotal: number;
+    itemsInCart: ItemsCart[];
     addItemsToCart: (item: ItemsCart) => void;
     removeItemsFromCart: (id: string) => void;
     handleAmountItem: (id: string, amountItem: number) => void;
-    priceTotal: number;
 }
 
 export const ItemsCartContext = createContext({} as ItemsCartContext);
 
 export function ItemsCartProvider({ children }: ItemsCartProviderProps) {
-    const [itemsInCart, setItemsInCart] = useState([{amount: 0, price: 9.9} as ItemsCart])
+    const [itemsInCartState, dispatch] = useReducer(
+        itemsInCartReducer,
+        {
+            itemsInCart: []
+        },
+        () => {
+            return {
+                itemsInCart: []
+            }
+        }
+    )
+
+    const {itemsInCart} = itemsInCartState
     const [priceTotal, setPriceTotal] = useState(0)
 
     useEffect(() => {
@@ -46,8 +37,8 @@ export function ItemsCartProvider({ children }: ItemsCartProviderProps) {
         }, 0))
     }, [itemsInCart, priceTotal])
 
-    function addItemsToCart({id, type, type2, type3, img, title, subtitle, amount} : ItemsCart) {
-        setItemsInCart([...itemsInCart, {
+    function addItemsToCart({ id, type, type2, type3, img, title, subtitle, amount }: ItemsCart) {
+        const newItem = {
             id,
             type,
             type2,
@@ -57,20 +48,17 @@ export function ItemsCartProvider({ children }: ItemsCartProviderProps) {
             subtitle,
             amount,
             price: 9.90
-        }])
+        }
+
+        dispatch(addNewItemInCartAction(newItem))
     }
 
     function removeItemsFromCart(id: string) {
-        const newItems = itemsInCart.filter(item => item.id !== id)
-        setItemsInCart(newItems)
+        dispatch(removeItemsFromCartAction(id))
     }
 
     function handleAmountItem(id: string, amountItem: number) {
-        const newItems = itemsInCart.map(item => item.id === id ? {
-            ...item,
-            amount: amountItem
-        } : item)
-        setItemsInCart(newItems)
+        dispatch(handleAmountItemAction(id, amountItem))
     }
 
     return (

@@ -28,9 +28,11 @@ export function Footer({
     value
 }: FooterProps) {
     const [amountItem, setAmountItem] = useState(1);
+    const [itemAddToCart, setItemAddToCart] = useState(false);
     const { addItemsToCart } = useContext(ItemsCartContext)
 
     function addItemsToCartButton() {
+        setItemAddToCart(true)
         addItemsToCart({
             id: id,
             type: type,
@@ -59,7 +61,7 @@ export function Footer({
             <ButtonAmountItems amountItem={amountItem} setAmountItem={setAmountItem} />
 
 
-            <ProductCartButton onClick={addItemsToCartButton}>
+            <ProductCartButton ItemAddToCart={itemAddToCart} onClick={addItemsToCartButton}>
                 <ShoppingCartSimple size={20} weight="fill" />
             </ProductCartButton>
         </ItemsFooter>

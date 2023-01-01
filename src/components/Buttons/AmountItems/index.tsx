@@ -18,7 +18,6 @@ export function ButtonAmountItems({ amountItem, setAmountItem, id, screenCheckou
             setAmountItem(amountItem - 1);
             if (id) {
                 handleAmountItem(id, amountItem - 1);
-                console.log(screenCheckout)
             }
         }
     }

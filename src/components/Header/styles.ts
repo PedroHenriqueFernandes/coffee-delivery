@@ -5,6 +5,10 @@ export const HeaderContainer = styled.header`
     align-items: center;
     justify-content: space-between;
     padding: 2rem 5.7rem;
+    
+    @media screen and (max-width: 500px){
+        padding: 2rem 2rem;
+    }
 `
 
 export const Cart = styled.div`
