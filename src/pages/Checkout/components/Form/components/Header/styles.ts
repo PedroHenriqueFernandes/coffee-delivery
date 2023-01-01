@@ -12,6 +12,10 @@ export const InfoFormContainer = styled.div`
         gap: 0.1rem;
         height: 100%;
     }
+
+    @media screen and (max-width: 1260px){
+        padding: 1rem 1rem 0.5rem 1rem;
+    }
 `;
 
 export const MapPinLineContainer = styled.div`

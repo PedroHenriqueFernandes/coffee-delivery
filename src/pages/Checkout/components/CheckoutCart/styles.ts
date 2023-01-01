@@ -6,6 +6,10 @@ export const CheckoutContainer = styled.div`
     justify-content: center;
     width: 40%;
     padding-bottom: 2rem;
+
+    @media screen and (max-width: 1260px){
+        width: 100%;
+    }
 `;
 
 export const TitleXSContainer = styled.div`

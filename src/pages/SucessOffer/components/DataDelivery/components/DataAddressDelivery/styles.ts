@@ -10,6 +10,12 @@ export const Container = styled.div`
     linear-gradient(#dbac2c, #8047f8) border-box;
     border: 1px solid transparent;
     border-radius: 6px 36px;
+
+    @media screen and (max-width: 1260px){
+        width: 100%;
+        height: 100%;
+        margin-bottom: 1rem;
+    }
 `;
 
 export const Content = styled.div`
@@ -19,6 +25,11 @@ export const Content = styled.div`
     justify-content: space-between;
     height: 100%;
     padding: 2.5rem;
+
+    @media screen and (max-width: 1260px){
+        padding: 1.5rem;
+        gap: 2rem;
+    }
 `;
 
 export const InfoContainer = styled.div`
@@ -28,6 +39,10 @@ export const InfoContainer = styled.div`
     gap: 0.75rem;
     height: 2rem;
     padding: 0.5rem;
+
+    @media screen and (max-width: 1260px){
+        gap: 0.5rem;
+    }
 `;
 
 export const InfoIcon = styled.div<{TypeInfo: string}>`

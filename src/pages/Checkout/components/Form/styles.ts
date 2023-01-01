@@ -4,6 +4,10 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     width: 57%;
+
+    @media screen and (max-width: 1260px){
+        width: 100%;
+    }
 `;
 
 export const FormContainer = styled.form`
@@ -34,6 +38,11 @@ export const InputContainer = styled.div`
     flex-direction: column;
     gap: 16px;
     padding: 0 40px 40px 40px;
+
+    @media screen and (max-width: 1260px){
+        padding: 0 10px 10px 10px;
+        gap: 8px;
+    }
 `;
 
 export const Input = styled.input`
@@ -72,6 +81,10 @@ export const Input = styled.input`
         line-height: 1.1375rem;
         font-weight: regular;
     }
+
+    @media screen and (max-width: 1260px){
+        padding-left: 0.3rem;
+    }
 `;
 
 export const InputFlex = styled.div`
@@ -79,4 +92,8 @@ export const InputFlex = styled.div`
     flex-direction: row;
     justify-content: space-between;
     gap: 16px;
+
+    @media screen and (max-width: 1260px){
+        gap: 8px;
+    }
 `;

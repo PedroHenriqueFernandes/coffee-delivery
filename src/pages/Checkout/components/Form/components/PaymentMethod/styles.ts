@@ -2,10 +2,15 @@ import styled from "styled-components";
 
 export const PaymentMethodContainer = styled.div`
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     padding: 0rem 2.5rem 2rem 2.5rem;
     gap: 0.75rem;
+
+    @media screen and (max-width: 1260px){
+        padding: 1rem 1rem 1rem 1rem;
+    }
 `;
 
 export const PaymentMethods = styled.div<{Method ?: string}>`
@@ -21,6 +26,10 @@ export const PaymentMethods = styled.div<{Method ?: string}>`
 
     svg{
         color: ${props => props.theme["purple-500"]};
+    }
+
+    @media screen and (max-width: 1260px){
+        width: 100%;
     }
 `;
 

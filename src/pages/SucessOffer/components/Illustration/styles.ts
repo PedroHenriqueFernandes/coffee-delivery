@@ -11,4 +11,8 @@ export const IllustrationContainer = styled.div`
         /* height: 22.5rem; */
         width: 100%;
     }
+
+    @media screen and (max-width: 1260px){
+        display: none;
+    }
 `;
