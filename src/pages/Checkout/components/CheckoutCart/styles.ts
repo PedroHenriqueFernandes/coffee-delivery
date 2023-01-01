@@ -5,6 +5,7 @@ export const CheckoutContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     width: 40%;
+    padding-bottom: 2rem;
 `;
 
 export const TitleXSContainer = styled.div`
