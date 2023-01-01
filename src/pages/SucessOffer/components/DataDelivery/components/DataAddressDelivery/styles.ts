@@ -42,6 +42,7 @@ export const InfoContainer = styled.div`
 
     @media screen and (max-width: 1260px){
         gap: 0.5rem;
+        padding: 0;
     }
 `;
 
